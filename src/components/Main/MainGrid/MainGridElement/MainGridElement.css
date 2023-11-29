@@ -1,0 +1,42 @@
+.mainGridElement {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+
+.mainGridElement__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.mainGridElement__title {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #181E2A;
+}
+
+.mainGridElement__line {
+    width: 50px;
+    border: 1px solid #055a0e;
+}
+
+.mainGridElement__subtitle {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+}

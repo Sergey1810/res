@@ -1,25 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Header } from './components/Header/Header';
+import { Main } from './components/Main/Main';
+import { Footer } from './components/Footer/Footer';
+import { PopupForm } from './components/PopupForm/PopupForm';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './components/Pages/Home/Home';
+import { Contents } from './components/Pages/Contents/Contents';
+import { Company } from './components/Company/Company';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const isOpenPopup = () => {
+    setIsOpen(true)
+  }
+
+  const isClosePopup = () => {
+    setIsOpen(false)
+  }
+
+  const [title, setTitle] = useState('Ремонт компьютерной техники')
+  const [title1c, setTitle1c] = useState('1C ЕГАИС Честный знак')
+  const [titleOrg, setTitleOrg] = useState('Обслуживание организаций')
+  const [titleVideo, setTitleVideo] = useState('Системы видеонаблюдения')
+  const [titleMobile, setTitleMobile] = useState('Ремонт мобильной техники')
+  const [titleKassa, setTitleKassa] = useState('Кассы: продажи, ремонт и обслуживание')
+  const [text, setText] = useState('Причины неисправной работы компьютерной техники могут быть два фактора: человеческий и программный. Если человеческий фактор сложно устранить, то программный или физический можно устранить довольно быстро и профессионально. Можно попробовать самостоятельно устранить неисправность, но не всегда хватает опыта и знаний в области ремонта. Специалисты нашего сервисного центра произведут профессиональную диагностику и в кратчайшие сроки устранят неисправность. Доверив эту работу специалистам, Вы экономите своё время и нервы.')
+  const [text1c, setText1с] = useState(' Программа 1С представляет собой комплекс автоматизации работы предприятий. За долгое время существования продукта, сложилось мнение что 1С это для бухгалтеров. Но за последнее время вышло большое разнообразие типовых решений и конфигураций, позволяющих автоматизировать работу кампаний различных отраслей. Чтобы разобраться во всем многообразии конфигураций программы и начать работать в ней, Наш сервисный центр предлагает свои услуги:')
+  const [textOrg, setTextOrg] = useState('  Сервисный центр "IT-Resurs" предлагает свои услуги по обслуживанию компьютерной и офисной техники. Специалисты имеют огромный опыт и навыки в поддержании работоспособности компьютерной техники и периферийных устройств, что позволяет обеспечить высокое качество поддержки и решение любых возникших задач. С каждым годом обслуживание становится всё более востребовательным. Техника становится более усовершенственной, с более сложными и дорогостоящими элементами. И чтобы сэкономить финансовые затраты, лучше вовремя предупредить выход из строя техники. Для этого нужна качественная диагностика и своевременно обслуживание. И поэтому сервисный центр "IT-Resurs" предоставляет свои услуги.')
+  const [textVideo, setTextVideo] = useState(' Рано или поздно человек задумывается о безопасности, будь то участок где проживает или товар на складах или магазинах. Что бы обезопасить себя и своё имущество призваны помочь системы видеонаблюдения. Систем видеонаблюдения на рынке великое множество, и порой очень сложно определиться, какая из них больше подходит именно в вашем случае. Специалисты сервисного центра «IT-Ресурс» помогут определиться с комплектующими, проведут монтаж и настройку оборудования.')
+  const [textMobile, setTextMobile] = useState('Причин выхода из строя мобильных телефоном может быть много. В ряде случаев – это производственный брак или плохое качество сборки, но чаще всего телефон ломается по вине своего владельца. Простой ремонт телефонаОсобенность простого ремонта сотовых телефонов заключается в том, что для диагностики поломки не требуется прибегать к использованию дорогостоящего оборудования. Как правило, это механические повреждения, которые заметны невооружённым взглядом. Такой ремонт выполняется достаточно быстро. Простой ремонт включает: замена корпуса, внешних разъемов,клавиатуры, замена динамика, микрофона и аккумулятора. Сложный ремонт телефона К сложному ремонту телефонов прибегают в том случае, когда проблема более серьёзная, чем просто механическое повреждение изделия. Такой ремонт требует предварительной диагностики с применением современного оборудования. Сложный ремонт включает: сбой программного обеспечения, замена микросхем, ремонт разъемов и восстановление монтажной пайки. Если проблема с телефоном серьёзная, то точная стоимость ремонта определяется только после комплексной диагностики аппарата.')
+  const [textKassa, setTextKassa] = useState('Подключение и настройка Регистрация и снятие ККТ с учета Подключение ККТ к ОФД Замена ФН (фискального накопителя) Подключение к ККТ периферийных устройств (принтеры, сканеры, терминалы) Диагностика и ремонт ККТ')
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path='/' element={<Home isOpenPopup={isOpenPopup} />} />
+        <Route path='pc' element={<Contents isOpenPopup={isOpenPopup} title={title} text={text}/>}/>
+        <Route path='1c' element={<Contents isOpenPopup={isOpenPopup} title={title1c} text={text1c}/>}/>
+        <Route path='org' element={<Contents isOpenPopup={isOpenPopup} title={titleOrg} text={textOrg}/>}/>
+        <Route path='video' element={<Contents isOpenPopup={isOpenPopup} title={titleVideo} text={textVideo}/>}/>
+        <Route path='mobile' element={<Contents isOpenPopup={isOpenPopup} title={titleMobile} text={textMobile}/>}/>
+        <Route path='kassa' element={<Contents isOpenPopup={isOpenPopup} title={titleKassa} text={textKassa}/>}/>
+      </Routes>
+      <PopupForm isOpen={isOpen} isClosePopup={isClosePopup} />
+    </>
   );
 }
 

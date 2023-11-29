@@ -1,0 +1,40 @@
+.price{
+   padding-top: 50px;
+}
+
+.price__container{
+   max-width: 1280px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit,minmax(285px,1fr));
+}
+
+.price__item{
+   padding: 20px;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+}
+
+.price__item:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+
+.price__title{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.price__count{
+  margin: 0;
+  padding: 0;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0.6;
+}

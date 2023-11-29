@@ -1,0 +1,20 @@
+.mainGrid{
+   background-color: #f0f0f0;
+}
+
+.mainGrid__container{
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.mainGrid__content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    flex-grow: 1;
+    gap: 30px;
+}
